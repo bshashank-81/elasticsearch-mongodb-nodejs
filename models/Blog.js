@@ -14,6 +14,7 @@ const blogSchema = new Schema({
   },
 });
 
+//mongoosastic index models into elasticsearch
 blogSchema.plugin(mongoosastic);
 
 const BlogModel = mongoose.model("Blog", blogSchema);

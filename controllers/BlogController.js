@@ -17,3 +17,12 @@ exports.createBlog = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+exports.searchBlogs = async (req, res) => {
+  try {
+    const blogs = await blogService.searchBlogs(req.query.searchParam);
+    res.json({ data: blogs, status: "success" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

@@ -1,9 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const blogRouter = require("./routes/BlogRoute");
-const { BlogModel } = require("./models/Blog");
 
-//create express middleware
 const app = express();
 
 //middleware
@@ -11,7 +9,7 @@ app.use(express.json());
 
 module.exports = app;
 
-//configure mongoose
+//configure mongoose , creating mongodb connection
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/CRUD",
   {
